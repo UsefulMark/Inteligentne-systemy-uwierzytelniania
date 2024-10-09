@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja</title>
+</head>
+<body>
+    <h2>Rejestracja</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="username">Nazwa użytkownika:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="file">Prześlij zdjęcie twarzy:</label>
+        <input type="file" id="file" name="file" accept="image/*" required><br>
+        <button type="submit">Zarejestruj</button>
+    </form>
+    <p>Masz już konto? <a href=''>Zaloguj się</a></p>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
