@@ -1,0 +1,46 @@
+# Ignore Python cache and environment files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment directories
+env/
+venv/
+
+# Ignore log and debug files
+*.log
+*.out
+*.err
+
+# Ignore weight files and training checkpoints
+*.weights
+*.pt
+*.ckpt
+
+# Ignore dataset and input files (customize this based on your project's needs)
+data/
+datasets/
+
+# Ignore output files from testing and inference
+runs/
+inference/output/
+*.jpg
+*.png
+*.mp4
+
+# Ignore temporary and system files
+*.swp
+*.swo
+.DS_Store
+
+# Ignore results and auxiliary files from training and testing
+results/
+train_aux/
+
+# If using Jupyter notebooks, ignore checkpoint files
+.ipynb_checkpoints/
+
+# Ignore user-specific config or settings files
+*.ini
+*.yaml
