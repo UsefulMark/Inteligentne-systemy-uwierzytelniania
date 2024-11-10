@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System Rozpoznawania Odcisków Palca</title>
+  </head>
+  <body>
+    <nav>
+      <a href="{{ url_for('home') }}">Strona główna</a> |
+      <a href="{{ url_for('register') }}">Rejestracja</a> |
+      <a href="{{ url_for('login') }}">Logowanie</a> | {% if
+      session.get('username') %}
+      <a href="{{ url_for('logout') }}"
+        >Wyloguj ({{ session.get('username') }})</a
+      >
+      {% endif %}
+    </nav>
+    <hr />
+    {% block content %}{% endblock %}
+  </body>
+</html>
