@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %}
+<h1>Logowanie zakończone sukcesem</h1>
+<p>Zalogowano jako <strong>{{ username }}</strong>.</p>
+<h2>Odległości:</h2>
+<ul>
+  <li>Odległość CNN: {{ cnn_distance }}</li>
+  <li>Odległość Geometryczna: {{ geometry_distance }}</li>
+</ul>
+<a href="{{ url_for('home') }}">Powrót do strony głównej</a>
+{% endblock %}

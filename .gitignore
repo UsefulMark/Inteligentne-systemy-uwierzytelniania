@@ -21,6 +21,7 @@ venv/
 # Ignore dataset and input files (customize this based on your project's needs)
 data/
 datasets/
+VirdiSDK/
 
 # Ignore output files from testing and inference
 runs/

@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content %}
+<h1>Rejestracja zakończona sukcesem</h1>
+<p>
+  Użytkownik <strong>{{ username }}</strong> został pomyślnie zarejestrowany.
+</p>
+<h2>Cechy geometryczne:</h2>
+<ul>
+  <li>Powierzchnia: {{ geometry_features[0] }}</li>
+  <li>Obwód: {{ geometry_features[1] }}</li>
+  <li>Proporcje: {{ geometry_features[2] }}</li>
+  <li>Extent: {{ geometry_features[3] }}</li>
+</ul>
+<a href="{{ url_for('home') }}">Powrót do strony głównej</a>
+{% endblock %}
