@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+<h1>Logowanie nieudane</h1>
+
+{% if message %}
+<p>{{ message }}</p>
+{% endif %} {% if show_distances %}
+<h2>Odległości:</h2>
+<ul>
+  <li><strong>Odległość CNN:</strong> {{ cnn_distance }}</li>
+  <li><strong>Odległość geometryczna:</strong> {{ geometry_distance }}</li>
+  <li><strong>Odległość minucji:</strong> {{ minutiae_distance }}</li>
+</ul>
+{% endif %}
+
+<a href="{{ url_for('home') }}">Powrót do strony głównej</a>
+{% endblock %}
