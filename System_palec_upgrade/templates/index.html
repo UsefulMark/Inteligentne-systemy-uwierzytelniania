@@ -1,8 +1,29 @@
 {% extends "base.html" %} {% block content %}
-<h1>System Rozpoznawania Odcisków Palca</h1>
-<p>Witaj w naszym systemie!</p>
-{% if username %}
-<p>Jesteś zalogowany jako <strong>{{ username }}</strong>.</p>
-{% else %}
-<p>Proszę zalogować się lub zarejestrować.</p>
-{% endif %} {% endblock %}
+<div class="container mt-5 text-center">
+  <h1 class="display-4 text-dark">SecurePrint</h1>
+  <p class="lead text-secondary">
+    Zaawansowany system rozpoznawania odcisków palców
+  </p>
+  <hr class="my-4" />
+  {% if username %}
+  <p class="text-success">
+    Jesteś zalogowany jako <strong>{{ username }}</strong>.
+  </p>
+  <a href="{{ url_for('logout') }}" class="btn btn-warning btn-lg mt-3">
+    <i class="fas fa-sign-out-alt"></i> Wyloguj
+  </a>
+  {% else %}
+  <p class="text-info">
+    Proszę zalogować się lub zarejestrować, aby kontynuować.
+  </p>
+  <div class="d-flex justify-content-center gap-3 mt-4">
+    <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">
+      <i class="fas fa-sign-in-alt"></i> Logowanie
+    </a>
+    <a href="{{ url_for('register') }}" class="btn btn-secondary btn-lg">
+      <i class="fas fa-user-plus"></i> Rejestracja
+    </a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
