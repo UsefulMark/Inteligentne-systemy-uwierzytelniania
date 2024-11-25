@@ -32,10 +32,17 @@ class CombinedFingerprintModel(torch.nn.Module):
         output = self.combined_fc(combined_features)
         return output
 
+# # Wczytanie modelu
+# model = CombinedFingerprintModel()
+# model.load_state_dict(torch.load("combined_fingerprint_model_with_minutiae.pth"))
+# model.eval()
 # Wczytanie modelu
 model = CombinedFingerprintModel()
-model.load_state_dict(torch.load("combined_fingerprint_model_with_minutiae.pth"))
+
+# Wymuszamy załadowanie na CPU
+model.load_state_dict(torch.load("combined_fingerprint_model_with_minutiae.pth", map_location=torch.device('cpu')))
 model.eval()
+
 
 # Funkcje pomocnicze
 def hash_password(password):

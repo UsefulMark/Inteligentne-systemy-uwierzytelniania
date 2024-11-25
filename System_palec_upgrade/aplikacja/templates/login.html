@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <div
+    class="p-4 border rounded shadow-sm bg-light mx-auto"
+    style="max-width: 500px"
+  >
+    <h2 class="text-center text-dark mb-4">Logowanie</h2>
+
+    {% if message %}
+    <div class="alert alert-danger text-center" role="alert">{{ message }}</div>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="username" class="form-label">Nazwa użytkownika:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="form-control"
+          placeholder="Wprowadź nazwę użytkownika"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Hasło:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          placeholder="Wprowadź hasło"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="fingerprint" class="form-label">Odcisk palca:</label>
+        <input
+          type="file"
+          id="fingerprint"
+          name="fingerprint"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary btn-lg">
+          <i class="fas fa-sign-in-alt"></i> Zaloguj
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

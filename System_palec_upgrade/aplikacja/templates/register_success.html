@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <div
+    class="p-4 border rounded shadow-sm bg-light mx-auto"
+    style="max-width: 600px"
+  >
+    <h2 class="text-center text-success mb-4">
+      <i class="fas fa-check-circle"></i> Rejestracja zakończona sukcesem
+    </h2>
+    <p class="text-center">
+      Użytkownik <strong>{{ username }}</strong> został pomyślnie
+      zarejestrowany.
+    </p>
+
+    <h3 class="mt-4 text-primary">Cechy geometryczne:</h3>
+    <ul class="list-group mb-3">
+      <li class="list-group-item">
+        <strong>Powierzchnia:</strong> {{ geometry_features[0] }}
+      </li>
+      <li class="list-group-item">
+        <strong>Obwód:</strong> {{ geometry_features[1] }}
+      </li>
+      <li class="list-group-item">
+        <strong>Proporcje:</strong> {{ geometry_features[2] }}
+      </li>
+      <li class="list-group-item">
+        <strong>Extent:</strong> {{ geometry_features[3] }}
+      </li>
+    </ul>
+
+    <h3 class="mt-4 text-primary">Cechy minucji:</h3>
+    <ul class="list-group mb-4">
+      <li class="list-group-item">
+        <strong>Zakończenia linii papilarnych:</strong> {{ minutiae_features[0]
+        }}
+      </li>
+      <li class="list-group-item">
+        <strong>Rozwidlenia linii papilarnych:</strong> {{ minutiae_features[1]
+        }}
+      </li>
+    </ul>
+
+    <div class="text-center">
+      <a href="{{ url_for('home') }}" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> Powrót do strony głównej
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

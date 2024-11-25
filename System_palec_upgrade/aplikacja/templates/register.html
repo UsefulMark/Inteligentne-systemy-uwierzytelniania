@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rejestracja - SecurePrint</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .registration-form {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #343a40;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-label {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #495057;
+      }
+
+      .form-control {
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        padding: 0.5rem;
+      }
+
+      .form-control:focus {
+        border-color: #80bdff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+      }
+    </style>
+  </head>
+  <body>
+    {% extends "base.html" %} {% block title %}Rejestracja - SecurePrint{%
+    endblock %} {% block content %}
+    <div class="container mt-5">
+      <div
+        class="p-4 border rounded shadow-sm bg-light mx-auto"
+        style="max-width: 500px"
+      >
+        <h2 class="text-center text-dark mb-4">Rejestracja</h2>
+        <form method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="username" class="form-label">Nazwa użytkownika:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="form-control"
+              placeholder="Wprowadź nazwę użytkownika"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Hasło:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Wprowadź hasło"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="fingerprint" class="form-label">Odcisk palca:</label>
+            <input
+              type="file"
+              id="fingerprint"
+              name="fingerprint"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg">
+              <i class="fas fa-user-plus"></i> Zarejestruj się
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
