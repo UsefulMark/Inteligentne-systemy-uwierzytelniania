@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <div
+    class="p-4 border rounded shadow-sm bg-light mx-auto"
+    style="max-width: 600px"
+  >
+    <h2 class="text-center text-danger mb-4">
+      <i class="fas fa-times-circle"></i> Logowanie nieudane
+    </h2>
+
+    {% if message %}
+    <p class="text-center text-dark fw-bold">{{ message }}</p>
+    {% endif %} {% if show_distances %}
+    <h3 class="mt-4 text-warning">Odległości:</h3>
+    <ul class="list-group mb-4">
+      <li class="list-group-item">
+        <strong>Odległość CNN:</strong> {{ cnn_distance }}
+      </li>
+      <li class="list-group-item">
+        <strong>Odległość geometryczna:</strong> {{ geometry_distance }}
+      </li>
+      <li class="list-group-item">
+        <strong>Odległość minucji:</strong> {{ minutiae_distance }}
+      </li>
+    </ul>
+    {% endif %}
+
+    <div class="text-center">
+      <a href="{{ url_for('home') }}" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> Powrót do strony głównej
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

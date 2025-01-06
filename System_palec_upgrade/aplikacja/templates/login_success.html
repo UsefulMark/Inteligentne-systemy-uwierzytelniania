@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <div
+    class="p-4 border rounded shadow-sm bg-light mx-auto"
+    style="max-width: 600px"
+  >
+    <h2 class="text-center text-success mb-4">
+      <i class="fas fa-check-circle"></i> Logowanie zakończone sukcesem
+    </h2>
+    <p class="text-center">Zalogowano jako <strong>{{ username }}</strong>.</p>
+
+    <h3 class="mt-4 text-primary">Odległości:</h3>
+    <ul class="list-group mb-4">
+      <li class="list-group-item">
+        <strong>Odległość CNN:</strong> {{ cnn_distance }}
+      </li>
+      <li class="list-group-item">
+        <strong>Odległość geometryczna:</strong> {{ geometry_distance }}
+      </li>
+      <li class="list-group-item">
+        <strong>Odległość minucji:</strong> {{ minutiae_distance }}
+      </li>
+    </ul>
+
+    <div class="text-center">
+      <a href="{{ url_for('home') }}" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> Powrót do strony głównej
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

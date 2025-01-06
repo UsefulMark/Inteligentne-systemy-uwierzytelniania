@@ -1,0 +1,4 @@
+System logowania-login i hasło (może jakieś dodatkowe zabezpieczenia np. złożoność)
+pobieranie punktów charakterystycznych twarzy (znaki szczególne (tzw. punkty charakterystyczne lub landmarki) twarzy, które są unikalne dla każdej osoby)
+DataSet własny albo rozszerzony o własny
+może odcisk palca
