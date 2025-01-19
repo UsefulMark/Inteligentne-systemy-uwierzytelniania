@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rejestracja</title>
+  </head>
+  <body>
+    <h1>Rejestracja</h1>
+    <form method="POST" enctype="multipart/form-data">
+      <label for="username">Nazwa użytkownika:</label>
+      <input type="text" name="username" required /><br />
+      <label for="audio">Nagranie głosu (WAV):</label>
+      <input type="file" name="audio" accept=".wav" required /><br />
+      <button type="submit">Zarejestruj</button>
+    </form>
+  </body>
+</html>
